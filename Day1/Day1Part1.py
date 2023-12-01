@@ -11,6 +11,7 @@ with open("input.txt","r") as input_file:
         start_pointer = 0
         end_pointer = len(line)-1
         while start_found == False or end_found == False:
+            
             #some basic error checking
             if start_pointer > len(line):
                 raise Exception("reached end of file without finding an int error encounterd")
@@ -32,5 +33,5 @@ with open("input.txt","r") as input_file:
         print(first_digit*10+second_digit)
         file_total+=(first_digit*10+second_digit)
     #create an output file
-    output = open("output.txt","w")
+    output = open("outputDay1Part1.txt","w")
     output.write(str(file_total))

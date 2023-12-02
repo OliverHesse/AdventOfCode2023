@@ -31,7 +31,9 @@ rec_map = {
     "nine":9
 }
 #that is all the setup i need
+
 with open("input.txt","r") as input_file:
+    
     file_total = 0
     current_line = 0
     for active_line in input_file:
@@ -103,7 +105,6 @@ with open("input.txt","r") as input_file:
            
         print(f"final digits are: {digit1},{digit2}")
         file_total += digit1*10+digit2
-        
+      
     output_file = open("outputDay1Part2.txt","w")
     output_file.write(str(file_total))
-        

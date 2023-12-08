@@ -1,4 +1,5 @@
-with open("test_input3.txt","r") as input_file:
+import time
+with open("InputDay8.txt","r") as input_file:
     count = 0
     directions = ""
     nodes = {}
@@ -24,19 +25,27 @@ with open("test_input3.txt","r") as input_file:
         count += 1
     reached_end = False
     current_nodes = start_directions
+    print(current_nodes)
+    print("==Now Searching==")
     nodes_traveled = 0
-    while reached_end == False:
-        for direction in directions:
-            z_found = 0
-            for i in range(0,len(current_nodes)):
-                current_nodes[i] = nodes[current_nodes[i]][direction]
-                if current_nodes[i][-1] == "Z":
-                    z_found += 1
-            nodes_traveled +=1
-            if z_found == len(current_nodes):
-                break
-            
+    listt = []
+    for node in current_nodes:
+        c_node = node
+        nodes_traveled = 0
+        reached_end = False
+        while reached_end == False:
+
+            for direction in directions:
+                nodes_traveled += 1
+                c_node = nodes[c_node][direction]
+                if c_node[-1] == "Z":
+                    reached_end = True
+                    break
+        listt.append(nodes_traveled)
+        print(nodes_traveled)
+    nodes_traveled = 0
+    print(listt)
 
     print("==Finished Traveling==")
-    print(f"arrived at node {current_node}")
+    print(f"arrived at node {current_nodes}")
     print(f"it took {nodes_traveled}")

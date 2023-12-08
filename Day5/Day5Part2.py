@@ -40,8 +40,7 @@ with open("input.txt", "r") as input_file:
             new_conversion_reached = False
             continue
         elif new_conversion_reached == False and seeds_found == True:
-            mapped_destination_start, mapped_source_start, mapped_range = line.split(
-                " ")
+            mapped_destination_start, mapped_source_start, mapped_range = line.split(" ")
             mapped_destination_start = int(mapped_destination_start)
             mapped_source_start = int(mapped_source_start)
             mapped_range = int(mapped_range)
